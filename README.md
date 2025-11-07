@@ -49,9 +49,19 @@ pip install --upgrade pip
 pip install -e .
 ```
 
-Installing the package in editable mode exposes the `cell_painting_pipeline` package and
-its `cli` entry point so you can run the workflow as a script or import the modules in a
-notebook.
+On **Windows PowerShell**, create and activate the virtual environment with:
+
+```powershell
+py -3 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install --upgrade pip
+pip install -e .
+```
+
+If you prefer the legacy Command Prompt, run `\.venv\Scripts\activate.bat` instead of the
+PowerShell activation script. Installing the package in editable mode exposes the
+`cell_painting_pipeline` package and its `cli` entry point so you can run the workflow as a
+script or import the modules in a notebook.
 
 ### 2. Arrange the raw Cell Painting data
 
@@ -83,6 +93,13 @@ use different conventions.【F:cell_painting_pipeline/cli.py†L24-L37】
 
 ```bash
 python -m cell_painting_pipeline.cli /path/to/raw_data ./report.txt
+```
+
+On Windows the module invocation is identical (`python` or `py -3` both work), and paths can
+use either forward slashes or the native backslash form:
+
+```powershell
+py -3 -m cell_painting_pipeline.cli C:\data\cell_painting report.txt
 ```
 
 When executed, the CLI performs the following steps:

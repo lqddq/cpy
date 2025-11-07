@@ -1,0 +1,15 @@
+[project]
+name = "cell-painting-pipeline"
+version = "0.1.0"
+description = "Modular workflow for mapping Cell Painting phenotypes to molecules"
+authors = [{name = "OpenAI Assistant"}]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy",
+    "imageio",
+]
+
+[project.scripts]
+cell-painting-pipeline = "cell_painting_pipeline.cli:main"
+
